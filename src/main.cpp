@@ -8,11 +8,10 @@
 */
 
 
-#define CONFIG 2
-#define DEBUG
+#define CONFIG 0
+//#define DEBUG
 #define TIMEOUT 60
 #include <FS.h>
-#include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h> // https://github.com/bblanchon/ArduinoJson
 #include <WiFiManager.h>
@@ -108,6 +107,7 @@ void setup() {
   //reset settings - for testing
   //wm.resetSettings();
   wm.setMinimumSignalQuality(40);
+  wm.setShowInfoUpdate(false);
 
   setupSpiffs();
 
